@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{379CB067-DFDC-4912-9F3E-993CD49B0973}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleAccounting.Service</RootNamespace>
+    <AssemblyName>SimpleAccounting.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IService\IAccountingLoginService.cs" />
+    <Compile Include="IService\IAccountingPurchaseOrderService.cs" />
+    <Compile Include="IService\IAccountingSalesInvoiceDetailService.cs" />
+    <Compile Include="IService\IAccountingSalesInvoiceService.cs" />
+    <Compile Include="IService\IAccountingSalesOrderDetailService.cs" />
+    <Compile Include="IService\IAccountingSalesOrderService.cs" />
+    <Compile Include="IService\IAccountingSupplierService.cs" />
+    <Compile Include="Service\AccountingCompanyDetailService.cs" />
+    <Compile Include="Service\AccountingCustomerService.cs" />
+    <Compile Include="Service\AccountingLoginService.cs" />
+    <Compile Include="Service\AccountingOptionService.cs" />
+    <Compile Include="Service\AccountingProductService.cs" />
+    <Compile Include="Service\AccountingPurchaseInvoiceDetailService.cs" />
+    <Compile Include="Service\AccountingPurchaseInvoiceService.cs" />
+    <Compile Include="Service\AccountingPurchaseOrderDetailService.cs" />
+    <Compile Include="Common\EntityService.cs" />
+    <Compile Include="Common\IEntityService.cs" />
+    <Compile Include="Common\IService.cs" />
+    <Compile Include="IService\IAccountingCompanyDetailService.cs" />
+    <Compile Include="IService\IAccountingCustomerService.cs" />
+    <Compile Include="IService\IAccountingOptionService.cs" />
+    <Compile Include="IService\IAccountingProductService.cs" />
+    <Compile Include="IService\IAccountingPurchaseInvoiceDetailService.cs" />
+    <Compile Include="IService\IAccountingPurchaseInvoiceService.cs" />
+    <Compile Include="IService\IAccountingPurchaseOrderDetailService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\AccountingPurchaseOrderService.cs" />
+    <Compile Include="Service\AccountingSalesInvoiceDetailService.cs" />
+    <Compile Include="Service\AccountingSalesInvoiceService.cs" />
+    <Compile Include="Service\AccountingSalesOrderDetailService.cs" />
+    <Compile Include="Service\AccountingSalesOrderService.cs" />
+    <Compile Include="Service\AccountingSupplierService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleAccounting.Model\SimpleAccounting.Model.csproj">
+      <Project>{02589ECA-EEB8-487D-B6EC-FA44517B1AC9}</Project>
+      <Name>SimpleAccounting.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleAccounting.Repository\SimpleAccounting.Repository.csproj">
+      <Project>{0A33262F-58AD-443A-99E0-0740E11FA033}</Project>
+      <Name>SimpleAccounting.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
